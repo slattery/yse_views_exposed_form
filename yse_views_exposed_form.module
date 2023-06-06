@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains yse_views_exposed_form.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yse_views_exposed_form_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name == 'help.page.yse_views_exposed_form') {
+    // Main module help for the yse_views_exposed_form module.
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds label to textfield when exposed op creates fieldset') . '</p>';
+      return $output;
+  }
+}
+
+
+function yse_views_exposed_form_form_alter(&$form, FormStateInterface $form_state, $form_id) { 
+  if ($form['#form_id'] == 'views_exposed_form') {
+    foreach ($form as $key => $el) {
+      if ( $el and is_array($el) and $el['#type'] and $el['#type'] == 'fieldset' ){
+        foreach ($el as $k => $v){
+          if ( is_array($v) and $v['#type'] == 'textfield' ){
+            if (!$v['#title']){                
+              $form[$key][$k]['#title'] = "Text Entry";
+              $form[$key][$k]['#title_display'] = "invisible";
+            }
+          }
+        }
+      }
+    }
+  }
+}

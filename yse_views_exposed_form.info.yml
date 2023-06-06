@@ -1,0 +1,6 @@
+name: YSE Views Exposed Form
+type: module
+description: "helping with views exposed forms, aria, etc."
+package: views
+core: 8.x
+core_version_requirement: ^8 || ^9

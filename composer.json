@@ -1,0 +1,6 @@
+{
+  "name": "slattery/yse_views_exposed_form",
+  "description": "walks form structure to add back hidden labels to input pairs in a fieldset",
+  "type": "drupal-custom-module",
+  "license": "GPL-2.0-or-later"
+}
