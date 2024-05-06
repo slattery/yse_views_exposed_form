@@ -1,6 +1,8 @@
-name: YSE Views Exposed Form
-type: module
-description: "helping with views exposed forms, aria, etc."
-package: views
+---
 core: 8.x
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: '^8 || ^9 || ^10'
+description: 'helping with views exposed forms, aria, etc.'
+name: 'YSE Views Exposed Form'
+package: views
+type: module
+version: v1.1.2
